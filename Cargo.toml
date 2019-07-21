@@ -17,7 +17,12 @@ according to Unicode Standard Annex #11 rules.
 
 exclude = [ "target/*", "Cargo.lock" ]
 
+[dependencies]
+core = { version = "1.0.0", optional = true, package = 'rustc-test-workspace-core' }
+std = { version = "1.0.0", optional = true, package = 'rustc-test-workspace-std' }
+
 [features]
 default = []
 no_std = []
 bench = []
+rustc-dep-of-test = ['core', 'std']
